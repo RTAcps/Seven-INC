@@ -1,7 +1,8 @@
 import Footer from "../../components/Footer";
+import Formulario from "../../components/FormAdd/Index";
 import NavBar from "../../components/NavBar";
 
-function Funcionarios() {
+function Employee() {
   return (
     <>
       <NavBar />
@@ -9,6 +10,7 @@ function Funcionarios() {
         <h1 className="text-primary py-3">Funcionários</h1>
         <div className="py-3">
           <h2 className="text-primary">Listagem</h2>
+          <Formulario />
         </div>
       </div>
       <Footer />
@@ -16,4 +18,4 @@ function Funcionarios() {
   );
 }
 
-export default Funcionarios;
+export default Employee;

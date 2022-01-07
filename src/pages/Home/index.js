@@ -4,11 +4,11 @@ import Footer from "../../components/Footer";
 
 function Home() {
   return (
-    <div>
+    <>
       <NavBar />
       <div className="container">
         <div className="jumbotron">
-          <h1 className="display-1">Seven INC</h1>
+          <h1 className="display-4">Seven INC</h1>
           <p className="lead">
             Sistema de Adição, Atualização e Remoção de Funcionários
           </p>
@@ -18,13 +18,13 @@ function Home() {
             funcionários.
           </p>
 
-          <Link className="btn btn-outline-success btn-lg" to="/funcionarios">
+          <Link className="btn btn-outline-primary btn-lg" to="/employee">
             Acessar Lista de Funcionários
           </Link>
         </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

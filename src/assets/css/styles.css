@@ -9,10 +9,35 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 
-#root {
+h1,
+h2 {
+  color: var(--color-primary) !important;
+}
+
+form {
+  background: #ececec;
+  border-radius: 1rem;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 1rem 0 0.2rem 0;
+}
+
+input {
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  height: 2rem;
+  padding-left: 1.2rem;
+}
+
+label .id {
+  width: 10%;
 }
 
 .content {

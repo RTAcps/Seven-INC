@@ -1,5 +1,5 @@
 import Home from "./pages/Home";
-import Funcionario from "./pages/Funcionario";
+import Employee from "./pages/Employee";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function Routes() {
@@ -9,8 +9,8 @@ function Routes() {
         <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/funcionarios">
-          <Funcionario />
+        <Route path="/employee">
+          <Employee />
         </Route>
       </Switch>
     </BrowserRouter>
