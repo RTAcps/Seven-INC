@@ -1,5 +1,6 @@
 import React from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
+import { BASE_URL } from "../../utils/requests";
 
 function FormUpdate() {
   function onSubmit(values, action) {
@@ -9,9 +10,8 @@ function FormUpdate() {
   function onBlurId(ev, setFieldValue) {
     const { value } = ev.target;
     const id = value;
-    const baseUrl = "https://localhost:PORTA_API/";
 
-    fetch(`${baseUrl}/employee/${id}`, {
+    fetch(`${BASE_URL}/employee/${id}`, {
       method: "PUT",
     })
       .then((res) => res.json())

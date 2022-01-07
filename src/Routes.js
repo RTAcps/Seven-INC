@@ -1,6 +1,6 @@
 import Home from "./pages/Home";
 import Employee from "./pages/Employee";
-import FormAdd from "../src/components/FormAdd";
+import FormAdd from "./components/FormAdd";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function link(ev) {
