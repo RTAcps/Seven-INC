@@ -1,17 +1,8 @@
-import React from "react";
-import { Formik, Field, Form } from "formik";
+import { Formik, Field, Form, ErrorMessage } from "formik";
 
-function Formulario() {
+function FormAdd() {
   function onSubmit(values, action) {
     console.log("SUBMIT", values);
-  }
-
-  function validate(values) {
-    const errors = {};
-    if (!values.name) {
-      errors.name = "Todos os campos são obrigatórios!";
-    }
-    return errors;
   }
 
   return (
@@ -19,46 +10,58 @@ function Formulario() {
       <h2>Cadastro de Funcionário</h2>
       <Formik
         onSubmit={onSubmit}
-        validate={validate}
         validateOnMount
         initialValues={{
-          id: "",
           name: "",
           document: "",
           phone: "",
-          bithDate: "",
+          birthDate: "",
           salary: "",
           createdAt: "",
         }}
-        render={({ values }) => (
+        render={({ isValid }) => (
           <Form>
-            <label htmlFor="id"> Id: </label>
-            <Field className="id" name="id" type="number" required />
+            <div>
+              <label htmlFor="name"> Nome: </label>
+              <Field
+                name="name"
+                placeholder="Nome Completo"
+                type="text"
+                required
+              />
+              <ErrorMessage name="name" />
+            </div>
+            <div>
+              <label htmlFor="document"> CPF: </label>
+              <Field name="document" type="text" required />
+              <ErrorMessage name="document" />
+            </div>
+            <div>
+              <label htmlFor="phone">Telefone</label>
+              <Field name="phone" type="text" required />
+              <ErrorMessage name="phone" />
+            </div>
+            <div>
+              <label htmlFor="birthDate"> Data de Nascimento: </label>
+              <Field name="birthDate" type="date" required />
+              <ErrorMessage name="birthDate" />
+            </div>
+            <div>
+              <label htmlFor="salary"> Salário: </label>
+              <Field name="salary" type="text" required />
+              <ErrorMessage name="salary" />
+            </div>
+            <div>
+              <label htmlFor="createdAt"> Data de Contratação: </label>
+              <Field name="createdAt" type="date" required />
+              <ErrorMessage name="createdAt" />
+            </div>
 
-            <label htmlFor="name"> Nome: </label>
-            <Field
-              name="name"
-              placeholder="Nome Completo"
-              type="text"
-              required
-            />
-
-            <label htmlFor="document"> CPF: </label>
-            <Field maxLength="14" name="document" type="text" required />
-
-            <label htmlFor="phone">Telefone</label>
-            <Field name="phone" type="text" required />
-
-            <label htmlFor="bithDate"> Data de Nascimento: </label>
-            <Field name="bithDate" type="date" required />
-
-            <label htmlFor="salary"> Salário: </label>
-            <Field name="salary" type="text" required />
-
-            <label htmlFor="createdAt"> Data de Contratação: </label>
-            <Field name="createdAt" type="date" required />
-
-            <button className="btn btn-outline-primary" type="submit">
+            <button
+              className="btn btn-outline-primary"
+              type="submit"
+              disabled={!isValid}
+            >
               {" "}
               CADASTRAR{" "}
             </button>
@@ -69,4 +72,4 @@ function Formulario() {
   );
 }
 
-export default Formulario;
+export default FormAdd;

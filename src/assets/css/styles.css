@@ -40,6 +40,16 @@ label .id {
   width: 10%;
 }
 
+thead {
+  text-align: center;
+}
+
+tbody th:nth-child(5),
+tbody th:nth-child(6),
+tbody th:nth-child(7) {
+  text-align: center;
+}
+
 .content {
   flex: 1 0 auto;
 }
