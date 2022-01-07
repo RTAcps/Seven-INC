@@ -1,6 +1,6 @@
 import Footer from "../../components/Footer";
 import NavBar from "../../components/NavBar";
-import { DataTable } from "../../components/DataTable";
+import { DataTable } from "../../components/DataTable/index.tsx";
 
 function Employee(ev) {
   return (
